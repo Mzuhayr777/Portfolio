@@ -447,11 +447,11 @@
   <header>
     <a href="#" class="nav__logo">Portfolio</a>
     <nav class="nav__menu">
-      <a href="#home" class="nav__link">Acceuil</a>
-      <a href="#about" class="nav__link">À propos</a>
-      <a href="#skills" class="nav__link">Compétences</a>
-      <a href="#projects" class="nav__link">Projets</a>
-      <a href="#work" class="nav__link">Expérience</a>
+      <a href="#home" class="nav__link">Home</a>
+      <a href="#about" class="nav__link">About</a>
+      <a href="#skills" class="nav__link">Skills</a>
+      <a href="#projects" class="nav__link">Projects</a>
+      <a href="#work" class="nav__link">Work</a>
       <a href="#contact" class="nav__link">Contact</a>
     </nav>
     <div class="header__buttons">
@@ -680,6 +680,12 @@
     // Translations
     const translations = {
       en: {
+        navHome: "Home",
+        navAbout: "About",
+        navSkills: "Skills",
+        navProjects: "Projects",
+        navWork: "Work",
+        navContact: "Contact",
         homeTitle: "Hello, I'm <span class='home__name'>Zuhayr</span>",
         homeSubtitle: "Second-year Computer Science Engineering student at EPITA",
         aboutTitle: "About Me",
@@ -696,8 +702,7 @@
         skillsTitle: "My Skills",
         skillsDescription: `
           <ul>
-            <li><b>Languages:</b> C, C++, C#, Python (basics)</li>
-            <li><b>Tools:</b> Linux, Git, GitHub, Visual Studio, VS Code</li>
+            <li><b>Languages:</b>English, French, Hindi, Urdu</li>
             <li><b>Concepts:</b> Object-oriented programming, algorithms, image processing</li>
             <li><b>Soft Skills:</b> Communication, teamwork, organization, curiosity, adaptability</li>
           </ul>
@@ -744,14 +749,20 @@
         footerCopyright: "&copy; 2025 Muhammad Zuhayr Shaikh. All rights reserved.",
       },
       fr: {
+        navHome: "Accueil",
+        navAbout: "À propos",
+        navSkills: "Compétences",
+        navProjects: "Projets",
+        navWork: "Expérience",
+        navContact: "Contact",
         homeTitle: "Bonjour, je m'appelle <span class='home__name'>Zuhayr</span>",
-        homeSubtitle: "Étudiant en 2ème année de Prépa Informatique à EPITA",
+        homeSubtitle: "Étudiant en 2ème année de Génie Informatique à EPITA",
         aboutTitle: "À propos de moi",
         aboutDescription: `
           Étudiant passionné d’informatique à EPITA, je suis animé par la curiosité, la rigueur et l’envie d’apprendre en permanence.
           Mon objectif est de transformer les idées en solutions numériques concrètes et utiles.
           <ul>
-            <li>🎓 Étudiant en 2ème année de cycle préparatoire à EPITA</li>
+            <li>🎓 Étudiant en 2ème année de cycle ingénieur à EPITA</li>
             <li>💻 Passionné par la programmation, l’IA et la cybersécurité</li>
             <li>🚀 Esprit créatif et analytique, aimant résoudre des problèmes complexes</li>
             <li>🤝 Aime travailler en équipe et partager les connaissances</li>
@@ -761,7 +772,7 @@
         skillsTitle: "Mes Compétences",
         skillsDescription: `
           <ul>
-            <li><b>Langages :</b> Francais, Anglais, Hindi, Urdu</li>
+            <li><b>Langages :</b>Langues parlées :</b> Français, Anglais, Hindi et Urdu</li>
             <li><b>Concepts :</b> Programmation orientée objet, algorithmique, traitement d’images</li>
             <li><b>Soft Skills :</b> Communication, rigueur, travail en équipe, autonomie, curiosité</li>
           </ul>
@@ -831,6 +842,15 @@
     function updateLanguage() {
       const lang = translations[currentLanguage];
 
+      // Update navigation links
+      document.querySelector('.nav__link[href="#home"]').textContent = lang.navHome;
+      document.querySelector('.nav__link[href="#about"]').textContent = lang.navAbout;
+      document.querySelector('.nav__link[href="#skills"]').textContent = lang.navSkills;
+      document.querySelector('.nav__link[href="#projects"]').textContent = lang.navProjects;
+      document.querySelector('.nav__link[href="#work"]').textContent = lang.navWork;
+      document.querySelector('.nav__link[href="#contact"]').textContent = lang.navContact;
+
+      // Update other content
       document.querySelector('.home__title').innerHTML = lang.homeTitle;
       document.querySelector('.home__subtitle').textContent = lang.homeSubtitle;
       document.querySelector('#about .section__title').textContent = lang.aboutTitle;
