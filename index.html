@@ -12,7 +12,7 @@
   <style>
     :root {
       --header-height: 3.5rem;
-      --hue: 140; /* Green theme */
+      --hue: 140;
       --first-color: hsl(var(--hue), 90%, 45%);
       --first-color-alt: hsl(var(--hue), 82%, 40%);
       --first-color-light: hsl(var(--hue), 40%, 80%);
@@ -30,24 +30,20 @@
       --h3-font-size: 1rem;
       --font-semi-bold: 600;
     }
-
     @media screen and (min-width: 1150px) {
       :root {
         --biggest-font-size: 4.5rem;
         --h1-font-size: 2.25rem;
       }
     }
-
     * {
       box-sizing: border-box;
       padding: 0;
       margin: 0;
     }
-
     html {
       scroll-behavior: smooth;
     }
-
     body {
       font-family: var(--body-font);
       background-color: var(--body-color);
@@ -55,32 +51,27 @@
       line-height: 1.6;
       transition: background-color 0.4s, color 0.4s;
     }
-
     body.dark-theme {
       --body-color: hsl(var(--hue), 30%, 10%);
       --container-color: hsl(var(--hue), 30%, 15%);
       --text-color: hsl(0, 0%, 90%);
       --title-color: hsl(0, 0%, 95%);
     }
-
     .container {
       max-width: 1120px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
-
     .section {
       padding: 5rem 0;
       min-height: 80vh;
     }
-
     .section__title {
       font-size: var(--h1-font-size);
       text-align: center;
       margin-bottom: 2rem;
       color: var(--title-color);
     }
-
     /* Header */
     header {
       position: fixed;
@@ -96,28 +87,23 @@
       align-items: center;
       padding: 0 2rem;
     }
-
     .nav__logo {
       font-weight: var(--font-semi-bold);
       color: var(--first-color);
       font-size: 1.2rem;
     }
-
     .nav__menu {
       display: flex;
       gap: 2rem;
     }
-
     .nav__link {
       color: var(--text-color);
       transition: color 0.3s;
       font-weight: 500;
     }
-
     .nav__link:hover {
       color: var(--first-color);
     }
-
     /* Dark Mode Toggle */
     .dark-mode-toggle {
       background: none;
@@ -127,11 +113,28 @@
       cursor: pointer;
       transition: color 0.3s;
     }
-
     .dark-mode-toggle:hover {
       color: var(--first-color);
     }
-
+    /* Language Toggle */
+    .language-toggle {
+      background: none;
+      border: none;
+      color: var(--text-color);
+      font-size: 1rem;
+      cursor: pointer;
+      transition: color 0.3s;
+      margin-left: 1rem;
+    }
+    .language-toggle:hover {
+      color: var(--first-color);
+    }
+    /* Header Buttons Container */
+    .header__buttons {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
     /* Home */
     .home {
       height: 100vh;
@@ -141,13 +144,11 @@
       text-align: center;
       background-color: var(--body-color);
     }
-
     .home__title {
       font-size: var(--biggest-font-size);
       color: var(--title-color);
       margin-bottom: 1rem;
     }
-
     .home__name {
       font-size: 4rem;
       color: var(--first-color);
@@ -155,16 +156,13 @@
       transition: transform 0.3s ease;
       display: inline-block;
     }
-
     .home__name:hover {
       transform: scale(1.05);
     }
-
     .home__subtitle {
       font-size: var(--h1-font-size);
       color: var(--first-color);
     }
-
     /* About */
     .about {
       display: flex;
@@ -173,7 +171,6 @@
       gap: 3rem;
       flex-wrap: wrap;
     }
-
     .profile__img {
       width: 200px;
       height: 200px;
@@ -181,12 +178,10 @@
       object-fit: cover;
       box-shadow: 0 5px 15px var(--shadow-color);
     }
-
     .about__data {
       max-width: 600px;
       text-align: left;
     }
-
     /* Skills */
     .skills__grid {
       display: grid;
@@ -195,14 +190,24 @@
       justify-items: center;
       margin-top: 2rem;
     }
-
+    .skills__description-container {
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      text-align: center;
+    }
+    .skills__description {
+      text-align: left;
+      display: inline-block;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text-color);
+    }
     .skill__card {
       perspective: 1000px;
       width: 100%;
       max-width: 150px;
       height: 150px;
     }
-
     .skill__card-inner {
       position: relative;
       width: 100%;
@@ -213,11 +218,9 @@
       box-shadow: 0 4px 8px var(--shadow-color);
       border-radius: 0.5rem;
     }
-
     .skill__card:hover .skill__card-inner {
       transform: rotateY(180deg);
     }
-
     .skill__card-front, .skill__card-back {
       position: absolute;
       width: 100%;
@@ -230,26 +233,21 @@
       background-color: var(--container-color);
       box-shadow: 0 4px 8px var(--shadow-color);
     }
-
     .skill__card-front {
       color: var(--first-color);
     }
-
     .skill__card-back {
       background-color: var(--first-color);
       color: var(--white-color);
       transform: rotateY(180deg);
     }
-
     .skill__icon {
       font-size: 3rem;
     }
-
     .skill__name {
       font-size: 1.2rem;
       font-weight: var(--font-semi-bold);
     }
-
     /* Projects */
     .projects__container {
       display: grid;
@@ -257,7 +255,6 @@
       gap: 2rem;
       justify-items: center;
     }
-
     .project__card {
       background-color: var(--container-color);
       border-radius: 0.5rem;
@@ -270,45 +267,37 @@
       max-width: 600px;
       margin: 0 auto;
     }
-
     .project__card:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 20px var(--shadow-color);
     }
-
     .project__header {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-
     .project__title {
       font-size: var(--h2-font-size);
       color: var(--title-color);
     }
-
     .project__arrow {
       font-size: 1.2rem;
       color: var(--first-color);
       transition: transform 0.3s;
     }
-
     .project__card.expanded .project__arrow {
       transform: rotate(180deg);
     }
-
     .project__content {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s ease-out;
       text-align: center;
     }
-
     .project__card.expanded .project__content {
       max-height: 1000px;
       margin-top: 1rem;
     }
-
     .project__img {
       width: 100%;
       max-width: 400px;
@@ -319,25 +308,21 @@
       margin: 0 auto;
       display: block;
     }
-
     .project__description {
       margin-bottom: 1rem;
       color: var(--text-color);
       text-align: left;
     }
-
     .project__languages {
       display: flex;
       gap: 0.5rem;
       flex-wrap: wrap;
       justify-content: center;
     }
-
     .language__icon {
       font-size: 1.2rem;
       color: var(--first-color);
     }
-
     /* Work */
     .work__container {
       display: grid;
@@ -345,7 +330,6 @@
       gap: 2rem;
       justify-items: center;
     }
-
     .work__card {
       background-color: var(--container-color);
       border-radius: 0.5rem;
@@ -353,8 +337,8 @@
       box-shadow: 0 5px 15px var(--shadow-color);
       width: 100%;
       max-width: 600px;
+      margin: 0 auto;
     }
-
     /* Contact */
     .contact__form {
       max-width: 600px;
@@ -363,7 +347,6 @@
       gap: 1.5rem;
       width: 100%;
     }
-
     .contact__input {
       padding: 1rem;
       border: 1px solid var(--text-color-light);
@@ -374,12 +357,10 @@
       color: var(--text-color);
       transition: border-color 0.3s;
     }
-
     .contact__input:focus {
       outline: none;
       border-color: var(--first-color);
     }
-
     .contact__button {
       background-color: var(--first-color);
       color: var(--white-color);
@@ -391,16 +372,13 @@
       width: 100%;
       font-weight: var(--font-semi-bold);
     }
-
     .contact__button:hover {
       background-color: var(--first-color-alt);
       transform: translateY(-2px);
     }
-
     .contact__button:active {
       transform: translateY(0);
     }
-
     /* Footer */
     footer {
       background-color: var(--first-color);
@@ -408,7 +386,6 @@
       padding: 2rem 0;
       text-align: center;
     }
-
     .footer__content {
       display: flex;
       flex-direction: column;
@@ -418,23 +395,19 @@
       margin: 0 auto;
       padding: 0 1.5rem;
     }
-
     .footer__copyright {
       font-size: 0.9rem;
     }
-
     .footer__contact h3 {
       margin-bottom: 1rem;
       font-size: 1.2rem;
     }
-
     .footer__contact-links {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 1.5rem;
     }
-
     .footer__contact-link {
       color: var(--white-color);
       text-decoration: none;
@@ -443,16 +416,13 @@
       gap: 0.5rem;
       transition: transform 0.3s, color 0.3s;
     }
-
     .footer__contact-link:hover {
       transform: translateY(-3px);
       color: var(--first-color-light);
     }
-
     .footer__contact-link i {
       font-size: 1.1rem;
     }
-
     /* Responsive */
     @media screen and (max-width: 768px) {
       .about {
@@ -477,16 +447,21 @@
   <header>
     <a href="#" class="nav__logo">Portfolio</a>
     <nav class="nav__menu">
-      <a href="#home" class="nav__link">Home</a>
-      <a href="#about" class="nav__link">About</a>
-      <a href="#skills" class="nav__link">Skills</a>
-      <a href="#projects" class="nav__link">Projects</a>
-      <a href="#work" class="nav__link">Work</a>
+      <a href="#home" class="nav__link">Acceuil</a>
+      <a href="#about" class="nav__link">À propos</a>
+      <a href="#skills" class="nav__link">Compétences</a>
+      <a href="#projects" class="nav__link">Projets</a>
+      <a href="#work" class="nav__link">Expérience</a>
       <a href="#contact" class="nav__link">Contact</a>
     </nav>
-    <button class="dark-mode-toggle" id="darkModeToggle">
-      <i class="fas fa-moon"></i>
-    </button>
+    <div class="header__buttons">
+      <button class="dark-mode-toggle" id="darkModeToggle">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="language-toggle" id="languageToggle">
+        <i class="fas fa-language"></i> FR
+      </button>
+    </div>
   </header>
 
   <!-- Home -->
@@ -495,7 +470,7 @@
       <h1 class="home__title">
         Hello, I'm <span class="home__name">Zuhayr</span>
       </h1>
-      <p class="home__subtitle">2nd-Year Student at EPITA</p>
+      <p class="home__subtitle">Second-year Computer Science Engineering student at EPITA</p>
     </div>
   </section>
 
@@ -506,10 +481,7 @@
         <img src="./assets/EPITA_Photo.jpg" alt="Profile Image" class="profile__img">
         <div class="about__data">
           <h2 class="section__title">About Me</h2>
-          <p>
-            A passionate student with a drive to learn and create.
-            Turning ideas into meaningful digital experiences.
-          </p>
+          <div class="about__description"></div>
         </div>
       </div>
     </div>
@@ -519,6 +491,9 @@
   <section class="skills section" id="skills">
     <div class="skills__container container">
       <h2 class="section__title">My Skills</h2>
+      <div class="skills__description-container">
+        <div class="skills__description"></div>
+      </div>
       <div class="skills__grid">
         <!-- Python -->
         <div class="skill__card">
@@ -612,22 +587,19 @@
     </div>
   </section>
 
-    <!-- Projects -->
+  <!-- Projects -->
   <section class="projects section" id="projects">
     <div class="projects__container container">
       <h2 class="section__title">My Projects</h2>
-      <!-- Project 1: CAJAZ ROYALE -->
+      <!-- Project 1: Cajaz Royale -->
       <div class="project__card" onclick="toggleProject(this)">
         <div class="project__header">
-          <h3 class="project__title">CAJAZ ROYALE</h3>
+          <h3 class="project__title">Cajaz Royale</h3>
           <i class="fas fa-chevron-down project__arrow"></i>
         </div>
         <div class="project__content">
           <img src="./assets/project1.jpg" alt="Project Image" class="project__img">
-          <p class="project__description">
-            Built AI enemies for a 2D-Battle Royale Game for the first-year project.
-            Used C# and Unity for development.
-          </p>
+          <div class="project__description"></div>
           <div class="project__languages">
             <span class="language__icon" style="font-family: Arial; font-weight: bold; font-size: 1.2rem;">C</span>
             <i class="fab fa-unity language__icon" style="font-size: 1.2rem;"></i>
@@ -642,10 +614,7 @@
         </div>
         <div class="project__content">
           <img src="./assets/project2.jpg" alt="Project Image" class="project__img">
-          <p class="project__description">
-            Deskewing text in images for optimal OCR reading.
-            Implemented in C.
-          </p>
+          <div class="project__description"></div>
           <div class="project__languages">
             <i class="fab fa-python language__icon"></i>
           </div>
@@ -659,9 +628,9 @@
     <div class="work__container container">
       <h2 class="section__title">Work Experience</h2>
       <div class="work__card">
-        <h3>Salesperson</h3>
+        <h3>Sales Associate – Super U</h3>
         <p>Super U | Sep 2025 - Present</p>
-        <p>Collaborated with team members to provide excellent customer service and maintain a well-organized sales environment.</p>
+        <div class="work__description"></div>
       </div>
     </div>
   </section>
@@ -682,7 +651,6 @@
   <!-- Footer -->
   <footer>
     <div class="footer__content">
-      
       <div class="footer__contact">
         <h3>Contact Me</h3>
         <div class="footer__contact-links">
@@ -709,6 +677,139 @@
   <!-- ScrollReveal and Dark Mode JS -->
   <script src="https://unpkg.com/scrollreveal"></script>
   <script>
+    // Translations
+    const translations = {
+      en: {
+        homeTitle: "Hello, I'm <span class='home__name'>Zuhayr</span>",
+        homeSubtitle: "Second-year Computer Science Engineering student at EPITA",
+        aboutTitle: "About Me",
+        aboutDescription: `
+          I'm a passionate computer science student at EPITA, driven by curiosity, discipline, and a strong desire to learn and create meaningful digital solutions.
+          <ul>
+            <li>🎓 Second-year engineering student at EPITA</li>
+            <li>💻 Passionate about programming, AI, and cybersecurity</li>
+            <li>🚀 Creative and analytical mindset, eager to solve complex problems</li>
+            <li>🤝 Enjoys teamwork, collaboration, and sharing knowledge</li>
+          </ul>
+          I aim to combine logic, creativity, and attention to detail to design projects that blend performance with positive impact.
+        `,
+        skillsTitle: "My Skills",
+        skillsDescription: `
+          <ul>
+            <li><b>Languages:</b> C, C++, C#, Python (basics)</li>
+            <li><b>Tools:</b> Linux, Git, GitHub, Visual Studio, VS Code</li>
+            <li><b>Concepts:</b> Object-oriented programming, algorithms, image processing</li>
+            <li><b>Soft Skills:</b> Communication, teamwork, organization, curiosity, adaptability</li>
+          </ul>
+        `,
+        projectsTitle: "My Projects",
+        project1Title: "Cajaz Royale",
+        project1Description: `
+          A 2D Battle Royale game developed as a first-year team project.
+          <ul>
+            <li>🎮 <b>Goal:</b> Create a 2D game with AI-controlled enemies</li>
+            <li>🧠 <b>Role:</b> Designed and programmed enemy AI behavior (movement, attack, detection)</li>
+            <li>⚙️ <b>Language:</b> C# (Unity)</li>
+            <li>🤝 <b>Collaboration:</b> Team coordination and version control using GitHub</li>
+            <li>📈 <b>Outcome:</b> Dynamic AI and smooth gameplay experience</li>
+          </ul>
+          This project taught me how to build autonomous behaviors, structure modular code, and collaborate effectively within a development team.
+        `,
+        project2Title: "OCR Image Preprocessing",
+        project2Description: `
+          Technical project focused on deskewing text in images to improve OCR accuracy.
+          <ul>
+            <li>📄 <b>Goal:</b> Automatically detect and correct text tilt in scanned images</li>
+            <li>💡 <b>Role:</b> Implemented the deskewing algorithm in C</li>
+            <li>⚙️ <b>Skills:</b> Image processing, applied mathematics, low-level memory management</li>
+            <li>🧩 <b>Outcome:</b> Significant improvement in OCR text recognition accuracy</li>
+          </ul>
+          This project helped me apply theory to practice and strengthen my understanding of algorithmic precision and performance optimization.
+        `,
+        workTitle: "Professional Experience",
+        workSalesperson: "Sales Associate – Super U",
+        workSalespersonDescription: `
+          Customer service and teamwork experience in a fast-paced retail environment.
+          <ul>
+            <li>🛒 <b>Tasks:</b> Customer assistance, product placement, stock management, and checkout</li>
+            <li>🤝 <b>Teamwork:</b> Collaborated with colleagues to maintain an organized sales area</li>
+            <li>🧭 <b>Skills gained:</b> Communication, service mindset, stress management</li>
+            <li>🎯 <b>Learned:</b> Responsibility, punctuality, and professional reliability</li>
+          </ul>
+        `,
+        contactTitle: "Contact Me",
+        contactButton: "Send",
+        contactSuccess: "Message sent! (This is a demo)",
+        footerContact: "Get in Touch",
+        footerCopyright: "&copy; 2025 Muhammad Zuhayr Shaikh. All rights reserved.",
+      },
+      fr: {
+        homeTitle: "Bonjour, je m'appelle <span class='home__name'>Zuhayr</span>",
+        homeSubtitle: "Étudiant en 2ème année de Génie Informatique à EPITA",
+        aboutTitle: "À propos de moi",
+        aboutDescription: `
+          Étudiant passionné d’informatique à EPITA, je suis animé par la curiosité, la rigueur et l’envie d’apprendre en permanence.
+          Mon objectif est de transformer les idées en solutions numériques concrètes et utiles.
+          <ul>
+            <li>🎓 Étudiant en 2ème année de cycle ingénieur à EPITA</li>
+            <li>💻 Passionné par la programmation, l’IA et la cybersécurité</li>
+            <li>🚀 Esprit créatif et analytique, aimant résoudre des problèmes complexes</li>
+            <li>🤝 Aime travailler en équipe et partager les connaissances</li>
+          </ul>
+          En combinant logique, créativité et sens du détail, je cherche à concevoir des projets qui allient performance et impact positif.
+        `,
+        skillsTitle: "Mes Compétences",
+        skillsDescription: `
+          <ul>
+            <li><b>Langages :</b> C, C++, C#, Python (bases)</li>
+            <li><b>Outils :</b> Linux, Git, GitHub, Visual Studio, VS Code</li>
+            <li><b>Concepts :</b> Programmation orientée objet, algorithmique, traitement d’images</li>
+            <li><b>Soft Skills :</b> Communication, rigueur, travail en équipe, autonomie, curiosité</li>
+          </ul>
+        `,
+        projectsTitle: "Mes Projets",
+        project1Title: "Cajaz Royale",
+        project1Description: `
+          Projet de jeu vidéo 2D de type Battle Royale, réalisé en équipe durant la première année.
+          <ul>
+            <li>🎮 <b>Objectif :</b> Créer un jeu 2D avec des ennemis contrôlés par IA</li>
+            <li>🧠 <b>Rôle :</b> Conception et développement de l’intelligence artificielle des ennemis</li>
+            <li>⚙️ <b>Langage :</b> C# (Unity)</li>
+            <li>🤝 <b>Travail d’équipe :</b> Coordination du code et versionnement avec GitHub</li>
+            <li>📈 <b>Résultats :</b> IA dynamique et gameplay fluide</li>
+          </ul>
+          Ce projet m’a appris à concevoir des comportements autonomes, à structurer du code orienté objet et à collaborer efficacement.
+        `,
+        project2Title: "Prétraitement d’images OCR",
+        project2Description: `
+          Projet technique centré sur le redressement de texte (deskewing) pour améliorer la précision d’un système OCR.
+          <ul>
+            <li>📄 <b>Objectif :</b> Corriger automatiquement l’inclinaison du texte dans les images</li>
+            <li>💡 <b>Rôle :</b> Développement de l’algorithme de deskewing en C</li>
+            <li>⚙️ <b>Compétences :</b> Traitement d’image, mathématiques appliquées, gestion mémoire</li>
+            <li>🧩 <b>Résultats :</b> Amélioration notable de la précision OCR</li>
+          </ul>
+          Ce projet m’a permis de combiner théorie et pratique, tout en renforçant ma rigueur algorithmique.
+        `,
+        workTitle: "Expérience Professionnelle",
+        workSalesperson: "Vendeur – Super U",
+        workSalespersonDescription: `
+          Expérience en vente et en contact client dans un environnement dynamique.
+          <ul>
+            <li>🛒 <b>Tâches :</b> Accueil des clients, mise en rayon, gestion du stock et encaissements</li>
+            <li>🤝 <b>Travail d’équipe :</b> Collaboration pour assurer un environnement de vente organisé</li>
+            <li>🧭 <b>Compétences développées :</b> Communication, gestion du stress, sens du service</li>
+            <li>🎯 <b>Apprentissages :</b> Rigueur, ponctualité et esprit de responsabilité</li>
+          </ul>
+        `,
+        contactTitle: "Contactez-moi",
+        contactButton: "Envoyer",
+        contactSuccess: "Message envoyé ! (Ceci est une démonstration)",
+        footerContact: "Contactez-moi",
+        footerCopyright: "&copy; 2025 Muhammad Zuhayr Shaikh. Tous droits réservés.",
+      }
+    };
+
     // Dark Mode Toggle
     const darkModeToggle = document.getElementById('darkModeToggle');
     darkModeToggle.addEventListener('click', () => {
@@ -717,6 +818,39 @@
       icon.classList.toggle('fa-moon');
       icon.classList.toggle('fa-sun');
     });
+
+    // Language Toggle
+    const languageToggle = document.getElementById('languageToggle');
+    let currentLanguage = 'en';
+
+    languageToggle.addEventListener('click', () => {
+      currentLanguage = currentLanguage === 'en' ? 'fr' : 'en';
+      updateLanguage();
+      languageToggle.innerHTML = currentLanguage === 'en' ? '<i class="fas fa-language"></i> FR' : '<i class="fas fa-language"></i> EN';
+    });
+
+    function updateLanguage() {
+      const lang = translations[currentLanguage];
+
+      document.querySelector('.home__title').innerHTML = lang.homeTitle;
+      document.querySelector('.home__subtitle').textContent = lang.homeSubtitle;
+      document.querySelector('#about .section__title').textContent = lang.aboutTitle;
+      document.querySelector('.about__description').innerHTML = lang.aboutDescription;
+      document.querySelector('#skills .section__title').textContent = lang.skillsTitle;
+      document.querySelector('.skills__description').innerHTML = lang.skillsDescription;
+      document.querySelector('#projects .section__title').textContent = lang.projectsTitle;
+      document.querySelectorAll('.project__title')[0].textContent = lang.project1Title;
+      document.querySelectorAll('.project__description')[0].innerHTML = lang.project1Description;
+      document.querySelectorAll('.project__title')[1].textContent = lang.project2Title;
+      document.querySelectorAll('.project__description')[1].innerHTML = lang.project2Description;
+      document.querySelector('#work .section__title').textContent = lang.workTitle;
+      document.querySelector('.work__card h3').textContent = lang.workSalesperson;
+      document.querySelector('.work__description').innerHTML = lang.workSalespersonDescription;
+      document.querySelector('#contact .section__title').textContent = lang.contactTitle;
+      document.querySelector('.contact__button').textContent = lang.contactButton;
+      document.querySelector('.footer__contact h3').textContent = lang.footerContact;
+      document.querySelector('.footer__copyright p').innerHTML = lang.footerCopyright;
+    }
 
     // Toggle Project Expansion
     function toggleProject(card) {
@@ -727,12 +861,13 @@
     const contactForm = document.getElementById('contactForm');
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      alert('Message sent! (This is a demo)');
+      alert(translations[currentLanguage].contactSuccess);
       contactForm.reset();
     });
 
-    // Initialize ScrollReveal after the page loads
+    // Initialize ScrollReveal and Language after the page loads
     window.addEventListener('DOMContentLoaded', () => {
+      updateLanguage();
       ScrollReveal().reveal('.home__title', { delay: 200, distance: '50px', origin: 'bottom' });
       ScrollReveal().reveal('.home__name', { delay: 400, distance: '50px', origin: 'bottom' });
       ScrollReveal().reveal('.home__subtitle', { delay: 600, distance: '50px', origin: 'bottom' });
